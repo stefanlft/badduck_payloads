@@ -8,5 +8,5 @@ Do
 For i = 1 To 50
 wshShell.SendKeys Chr(175)
 Next
-WScript.Sleep 1000
+WScript.Sleep 500
 Loop
